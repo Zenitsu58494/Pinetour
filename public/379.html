@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowing Button</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #121212;
+      }
+
+      .glow-on-hover {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #6200ea;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        outline: none;
+      }
+
+      .glow-on-hover::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, #ffffff60, transparent);
+        transition: transform 0.5s ease;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .glow-on-hover:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .glow-on-hover:hover {
+        transform: translateY(-5px);
+      }
+
+      .glow-on-hover span {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="glow-on-hover"><span>Hover Me!</span></button>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../Desktop/unread"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "unread"
+  }
+}
